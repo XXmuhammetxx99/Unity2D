@@ -28,13 +28,14 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
             if(leftOverItems <= 0)
                 Destroy(gameObject);
             else
                 quantity = leftOverItems;
+
 
 
 

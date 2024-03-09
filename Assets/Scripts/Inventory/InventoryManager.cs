@@ -7,9 +7,19 @@ public class InventoryManager : MonoBehaviour
 {
     
     public ItemSlot[] itemSLot;
+    public ItemSO[] itemSOs;
 
    
-
+    public void UseItem(string itemName)
+    {
+        for (int i = 0; i < itemSOs.Length; i++)
+        {
+            if (itemSOs[i].itemName == itemName)
+            {
+                itemSOs[i].UseItem();
+            }
+        }
+    }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
