@@ -5,23 +5,31 @@ using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject InventoryMenu;
-    private bool menuActivated;
+    
+    public ItemSlot[] itemSLot;
 
-    public void OnPressedInventory(InputAction.CallbackContext context)
+   
+
+
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
-        if (context.action.triggered)
+        for (int i = 0; i < itemSLot.Length; i++)
         {
-            menuActivated = !menuActivated;
-
-            InventoryMenu.SetActive(menuActivated);
+            if (itemSLot[i].isFull == false)
+            {
+                itemSLot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+                return;
+            }
         }
     }
 
-
-    public void AddItem(string itemName, int quantity, Sprite itemSprite)
+    public void DeselectAllSlots()
     {
-        Debug.Log("itemName = " + itemName + "quantity = " + quantity + "itemSprite" + itemSprite);
+        for (int i = 0; i < itemSLot.Length; i++)
+        {
+            itemSLot[i].selectedShader.SetActive(false);
+            itemSLot[i].thisItemSelected = false;
+        }
     }
 
 }
