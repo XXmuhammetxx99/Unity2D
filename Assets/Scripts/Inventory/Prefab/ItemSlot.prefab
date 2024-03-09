@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4620783456751619332
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 25}
+  m_AnchoredPosition: {x: -105.9, y: 18.3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6120771160875302835
@@ -241,8 +241,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6457978022913710036}
-  - {fileID: 4201703729237259314}
   - {fileID: 4620783456751619332}
+  - {fileID: 4201703729237259314}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -304,9 +304,10 @@ MonoBehaviour:
   thisItemSelected: 0
   itemName: 
   quantity: 0
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: c361664c03ab21b408cff7b57eb963c0, type: 3}
   isFull: 0
   itemDescription: 
+  maxNumberOfItems: 20
   quantityText: {fileID: 5402596420648284891}
   itemImage: {fileID: 8707111044697074671}
   itemDescriptionImage: {fileID: 0}
