@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   itemName: Bow
-  statTOChange: 0
-  amountToChangeStat: 10
+  statTOChange: 1
+  amountToChangeStat: 0
   attributesTOChange: 0
   amountToChangeAttribute: 0

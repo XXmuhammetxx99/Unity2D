@@ -35,14 +35,6 @@ public class Item : MonoBehaviour
                 Destroy(gameObject);
             else
                 quantity = leftOverItems;
-
-
-
-
-
-
-
-
         }
     }
 }

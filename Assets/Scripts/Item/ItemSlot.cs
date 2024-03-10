@@ -37,13 +37,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public TMP_Text ItemDescriptionNameText;
     public TMP_Text ItemDescriptionText;
 
-
-
-
-
-
-
-
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
@@ -121,17 +114,18 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
 
         else
-        {
- inventoryManager.DeselectAllSlots();
-        selectedShader.SetActive(true);
-        thisItemSelected = true;
-        ItemDescriptionNameText.text = itemName;
-        ItemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = itemSprite;
-        if (itemDescriptionImage.sprite == null)
-        {
-            itemDescriptionImage.sprite = emptySprite;
-        }
+        { 
+            inventoryManager.DeselectAllSlots();
+            selectedShader.SetActive(true);
+            thisItemSelected = true;
+            ItemDescriptionNameText.text = itemName;
+            ItemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemSprite;
+            
+            if (itemDescriptionImage.sprite == null)
+            {
+                itemDescriptionImage.sprite = emptySprite;
+            }
         }
 
        
@@ -152,5 +146,28 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     }
 
+    public void RemoveItem()
+    {
+        if (quantity > 0)
+        {
+            quantity--;
+
+            if (quantity == 0)
+            {
+                itemName = "";
+                isFull = false;
+                itemSprite = emptySprite;
+                quantityText.text = "";
+                quantityText.enabled = false;
+                itemImage.sprite = emptySprite;
+                selectedShader.SetActive(false);
+                thisItemSelected = false;
+            }
+            else
+            {
+                quantityText.text = quantity.ToString();
+            }
+        }
+    }
 
 }

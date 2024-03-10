@@ -9,7 +9,8 @@ public class InventoryManager : MonoBehaviour
     public ItemSlot[] itemSLot;
     public ItemSO[] itemSOs;
 
-   
+    [SerializeField] private Transform dropPosition;
+
     public void UseItem(string itemName)
     {
         for (int i = 0; i < itemSOs.Length; i++)
@@ -48,4 +49,29 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            DropItem("Loot");
+        }
+    }
+
+    public void DropItem(string itemName)
+    {
+        for (int i = 0; i < itemSLot.Length; i++)
+        {
+            if (itemSLot[i].itemName == itemName && itemSLot[i].quantity > 0)
+            {
+                GameObject droppedItem = new GameObject(itemName);
+                SpriteRenderer spriteRenderer = droppedItem.AddComponent<SpriteRenderer>();
+                spriteRenderer.sprite = itemSLot[i].itemSprite;
+
+                // Set the drop position based on the assigned empty GameObject
+                droppedItem.transform.position = dropPosition.position;
+
+                itemSLot[i].RemoveItem();
+            }
+        }
+    }
 }

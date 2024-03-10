@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float sprintSpeed = 3f;
     private bool isSprinting = false;
 
+
     private void Awake()
     {
         input = new CustomInput();
