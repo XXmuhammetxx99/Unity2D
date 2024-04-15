@@ -8,6 +8,13 @@ public class Shoot : MonoBehaviour
     public InventoryManager inventoryManager;
     public GameObject arrowPrefab;
     public float arrowSpeed = 10f;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+    }
 
     void Update()
     {
@@ -28,6 +35,8 @@ public class Shoot : MonoBehaviour
                 if (inventoryManager.itemSLot[i].itemName == "Arrow" && inventoryManager.itemSLot[i].quantity > 0)
                 {
                     foundArrow = true;
+                    audioManager.PlaySFX(audioManager.shooting);
+
 
                     GameObject arrow = Instantiate(arrowPrefab, shootPosition.position, shootPosition.rotation);
                     Rigidbody2D arrowRb = arrow.GetComponent<Rigidbody2D>();
