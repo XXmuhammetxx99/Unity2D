@@ -17012,7 +17012,6 @@ GameObject:
   - component: {fileID: 1210963245}
   - component: {fileID: 1210963244}
   - component: {fileID: 1210963250}
-  - component: {fileID: 1210963251}
   - component: {fileID: 1210963252}
   m_Layer: 0
   m_Name: Player
@@ -17275,18 +17274,6 @@ MonoBehaviour:
   inventoryManager: {fileID: 412848139}
   arrowPrefab: {fileID: 3878274717835032494, guid: 03e9372cd6342d64c99e806f5c693bed, type: 3}
   arrowSpeed: 1
---- !u!114 &1210963251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210963242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d583b32cfdc712c4cbf65dac6a27a465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1210963252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24619,7 +24606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1719991711
 RectTransform:
   m_ObjectHideFlags: 0

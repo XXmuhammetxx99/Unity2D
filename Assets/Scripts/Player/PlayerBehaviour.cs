@@ -14,7 +14,10 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             PlayerTakeDmg(100);
+            Time.timeScale = 0;
+            GameManager.gameManager.gameOver();
             Debug.Log(GameManager.gameManager._playerHealth.Health);
+
         }
     }
 
